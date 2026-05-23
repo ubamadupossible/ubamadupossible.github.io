@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Roboto", "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
+  --font-mono: "Fira Code", "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  --color-bg-dark: #060913;
+  --color-surface: #0f1629;
+  --color-surface-light: #1a233a;
+  
+  --color-primary: #0ea5e9;
+  --color-primary-light: #38bdf8;
+  --color-secondary: #6366f1;
+  --color-accent: #10b981;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg-dark);
+    color: #94a3b8; /* slate-400 */
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #f8fafc; /* slate-50 */
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background-color: rgba(15, 22, 41, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(56, 189, 248, 0.1);
+  }
+  
+  .glow-border {
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    box-shadow: 0 0 15px rgba(14, 165, 233, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .glow-border:hover {
+    border-color: rgba(56, 189, 248, 0.5);
+    box-shadow: 0 0 25px rgba(14, 165, 233, 0.3);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(to right, var(--color-primary-light), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .bg-grid-pattern {
+    background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
