@@ -101,13 +101,13 @@ const About = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mb-8 max-w-4xl"
         >
-          <p className="text-slate-300 text-lg leading-relaxed mb-4">
+          <p className="text-slate-300 text-lg leading-relaxed mb-4 text-justify">
             Hardware that performs flawlessly under pressure isn't an accident. It's the result of disciplined engineering, obsessive attention to detail, and a relentless drive to own every stage of the process.
           </p>
-          <p className="text-slate-400 text-lg leading-relaxed mb-4">
+          <p className="text-slate-400 text-lg leading-relaxed mb-4 text-justify">
             With <span className="text-white font-semibold">3+ years of production-grade experience</span>, I specialize in taking high-speed embedded designs from initial topology to factory floor. My expertise focuses on dense, multi-layer PCB design where signal integrity analysis, propagation delay matching, and impedance control dictate system reliability. I operate exactly where complex high-frequency hardware meets intelligence.
           </p>
-          <p className="text-slate-400 text-lg leading-relaxed">
+          <p className="text-slate-400 text-lg leading-relaxed text-justify">
             My hardware execution spans advanced <span className="text-primary font-semibold">ARM Cortex, ESP32, and FPGA architectures</span>, focusing heavily on robust power delivery networks (PDN) and high-speed communication interfaces. I don't hand off layout or electromagnetic interference (EMI) problems—I design them out of the system entirely.
           </p>
         </motion.div>
