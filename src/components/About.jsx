@@ -74,7 +74,7 @@ const About = () => {
 
   return (
     <section id="about" className="py-24 px-6 md:px-12 relative">
-      <div className="container mx-auto">
+      <div className="max-w-[1600px] mx-auto w-full">
 
         {/* Headline */}
         <motion.div
@@ -99,7 +99,7 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-8 max-w-4xl"
+          className="mb-8"
         >
           <p className="text-slate-300 text-lg leading-relaxed mb-4 text-justify">
             Hardware that performs flawlessly under pressure isn't an accident. It's the result of disciplined engineering, obsessive attention to detail, and a relentless drive to own every stage of the process.

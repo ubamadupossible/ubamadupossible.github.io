@@ -30,7 +30,7 @@ const Hero = () => {
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center pt-20 px-6 md:px-12 relative overflow-hidden">
-      <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-[1600px] mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -41,14 +41,14 @@ const Hero = () => {
             <span>SIGNAL_INTEGRITY // IMPEDANCE_MATCHED</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4">
-            Engineering <br/>
-            <span className="text-gradient">High-Speed Hardware</span> <br className="hidden md:inline" />
+            Engineering{' '}
+            <span className="text-gradient">High-Speed Hardware</span>{' '}
             &amp; Embedded Architectures.
           </h1>
           <h2 className="text-xl md:text-2xl text-slate-300 font-semibold mb-6 tracking-wide">
             High-Speed PCB Design &amp; Embedded Systems Engineer
           </h2>
-          <p className="text-slate-400 max-w-xl mb-8 leading-relaxed text-base md:text-lg text-justify">
+          <p className="text-slate-400 mb-8 leading-relaxed text-base md:text-lg text-justify">
             Specializing in high-density, multi-layer PCB layouts where signal integrity, power distribution, and EMI/EMC mitigation are critical. From precision impedance matching to robust low-level firmware execution, I design resilient hardware systems optimized for high-performance deployment.
           </p>
           
