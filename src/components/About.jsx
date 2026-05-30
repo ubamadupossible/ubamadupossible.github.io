@@ -105,10 +105,10 @@ const About = () => {
             Hardware that performs flawlessly under pressure isn't an accident. It's the result of disciplined engineering, obsessive attention to detail, and a relentless drive to own every stage of the process.
           </p>
           <p className="text-slate-400 text-lg leading-relaxed mb-4">
-            With <span className="text-white font-semibold">3+ years of production-grade experience</span>, I specialize in taking embedded systems from napkin sketch to factory floor — independently. From high-voltage inverter topologies and multilayer PCB design to signal integrity analysis and firmware architecture, I operate where hardware meets intelligence.
+            With <span className="text-white font-semibold">3+ years of production-grade experience</span>, I specialize in taking high-speed embedded designs from initial topology to factory floor. My expertise focuses on dense, multi-layer PCB design where signal integrity analysis, propagation delay matching, and impedance control dictate system reliability. I operate exactly where complex high-frequency hardware meets intelligence.
           </p>
           <p className="text-slate-400 text-lg leading-relaxed">
-            My expertise spans <span className="text-primary font-semibold">ESP32, STM32, and AVR platforms</span>, power electronics, IoT data acquisition, and Human Machine Interface (HMI) programming. I don't hand off problems — I solve them.
+            My hardware execution spans advanced <span className="text-primary font-semibold">ARM Cortex, ESP32, and FPGA architectures</span>, focusing heavily on robust power delivery networks (PDN) and high-speed communication interfaces. I don't hand off layout or electromagnetic interference (EMI) problems—I design them out of the system entirely.
           </p>
         </motion.div>
 

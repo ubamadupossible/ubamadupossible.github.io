@@ -51,10 +51,12 @@ const Navbar = () => {
             </a>
           ))}
           <a 
-            href="#contact" 
-            className="px-5 py-2 rounded border border-primary/50 text-primary hover:bg-primary/10 transition-colors glow-border"
+            href="./resume.html?download=true"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2 rounded border border-primary/50 text-primary hover:bg-primary/10 transition-colors glow-border font-bold text-xs tracking-widest"
           >
-            CONNECT
+            RESUME
           </a>
         </div>
 

@@ -12,17 +12,18 @@ const Hero = () => {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono mb-6">
             <Terminal size={14} />
-            <span>SYSTEM.READY // V1.0</span>
+            <span>SIGNAL_INTEGRITY // IMPEDANCE_MATCHED</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-4">
-            Building The <br/>
-            <span className="text-gradient">Hardware</span> Future.
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4">
+            Engineering <br/>
+            <span className="text-gradient">High-Speed Hardware</span> <br className="hidden md:inline" />
+            &amp; Embedded Architectures.
           </h1>
-          <h2 className="text-xl md:text-2xl text-slate-400 font-medium mb-6">
-            PCB Design Engineer <span className="text-primary">|</span> Embedded System Engineer <span className="text-primary">|</span> Electronics Engineer
+          <h2 className="text-xl md:text-2xl text-slate-300 font-semibold mb-6 tracking-wide">
+            High-Speed PCB Design &amp; Embedded Systems Engineer
           </h2>
-          <p className="text-slate-400 max-w-lg mb-8 leading-relaxed">
-            Specializing in IoT solutions, firmware development, PCB design, and bridging the gap between sophisticated hardware and intuitive software interfaces.
+          <p className="text-slate-400 max-w-xl mb-8 leading-relaxed text-base md:text-lg">
+            Specializing in high-density, multi-layer PCB layouts where signal integrity, power distribution, and EMI/EMC mitigation are critical. From precision impedance matching to robust low-level firmware execution, I design resilient hardware systems optimized for high-performance deployment.
           </p>
           
           <div className="flex flex-wrap gap-4">
@@ -34,8 +35,16 @@ const Hero = () => {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <a 
+              href="./resume.html?download=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 border border-primary/50 text-primary font-bold rounded hover:bg-primary/10 transition-all glow-border flex items-center gap-2"
+            >
+              Download CV
+            </a>
+            <a 
               href="#contact" 
-              className="px-6 py-3 border border-slate-600 text-slate-300 rounded hover:border-primary hover:text-primary transition-all glow-border"
+              className="px-6 py-3 border border-slate-600 text-slate-300 rounded hover:border-primary hover:text-primary transition-all"
             >
               Contact Me
             </a>
@@ -46,10 +55,10 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="relative hidden md:block"
+          className="relative w-full"
         >
           {/* Profile Picture */}
-          <div className="relative w-full aspect-square max-w-md mx-auto">
+          <div className="relative w-full aspect-square max-w-[280px] sm:max-w-[340px] md:max-w-md mx-auto">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-[80px] animate-pulse"></div>
             <div className="relative z-10 w-full h-full rounded-full border border-primary/30 p-2 glow-border">
               <div className="w-full h-full rounded-full overflow-hidden bg-surface relative group">
@@ -75,7 +84,6 @@ const Hero = () => {
             className="text-center mt-6"
           >
             <h3 className="text-2xl font-bold tracking-wide"><span className="text-gradient">Ubamadu Possible</span></h3>
-            <p className="text-xs font-mono text-primary mt-1 tracking-widest uppercase">Embedded Systems Engineer</p>
           </motion.div>
 
         </motion.div>
