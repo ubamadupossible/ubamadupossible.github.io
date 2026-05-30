@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume - Ubamadu Possible Sopuruchi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #0ea5e9;
+      --color-secondary: #6366f1;
+      --color-dark: #0f172a;
+      --color-slate: #475569;
+      --color-light-slate: #f8fafc;
+      --color-border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      color: var(--color-dark);
+      background-color: #f1f5f9;
+      line-height: 1.5;
+      padding: 40px 20px;
+    }
+
+    .resume-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 50px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+
+    /* Print control bar */
+    .control-bar {
+      max-width: 900px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--color-dark);
+      padding: 12px 24px;
+      border-radius: 8px;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn {
+      padding: 8px 16px;
+      background: var(--color-primary);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #0284c7;
+    }
+
+    /* Header */
+    header {
+      border-bottom: 2px solid var(--color-primary);
+      padding-bottom: 25px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--color-dark);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 5px;
+    }
+
+    .title-tag {
+      font-size: 1.1rem;
+      color: var(--color-secondary);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--color-slate);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .contact-item a {
+      color: var(--color-slate);
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      color: var(--color-primary);
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-dark);
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 6px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+    }
+
+    h2::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--color-border);
+      margin-left: 15px;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: var(--color-slate);
+      margin-bottom: 12px;
+      text-align: justify;
+    }
+
+    /* Core Competencies Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .skill-category {
+      background: var(--color-light-slate);
+      padding: 15px;
+      border-radius: 6px;
+      border-left: 3px solid var(--color-primary);
+    }
+
+    .skill-category-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+      color: var(--color-dark);
+    }
+
+    .skill-list {
+      font-size: 0.85rem;
+      color: var(--color-slate);
+    }
+
+    /* Experience Timeline */
+    .exp-item {
+      margin-bottom: 25px;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+
+    .exp-role {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--color-dark);
+    }
+
+    .exp-company-loc {
+      font-weight: 500;
+      color: var(--color-secondary);
+      font-size: 0.95rem;
+    }
+
+    .exp-date {
+      font-size: 0.9rem;
+      color: var(--color-slate);
+      font-weight: 600;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .bullets {
+      list-style-type: square;
+      margin-left: 20px;
+      font-size: 0.9rem;
+      color: var(--color-slate);
+    }
+
+    .bullets li {
+      margin-bottom: 6px;
+      text-align: justify;
+    }
+
+    /* Projects / Outcomes */
+    .project-item {
+      margin-bottom: 20px;
+    }
+
+    .project-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--color-dark);
+      margin-bottom: 4px;
+    }
+
+    /* Metrics Grid */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-bottom: 10px;
+    }
+
+    .metric-card {
+      background: var(--color-light-slate);
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 4px;
+    }
+
+    .metric-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-slate);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      line-height: 1.2;
+    }
+
+    /* Education */
+    .edu-item {
+      margin-bottom: 10px;
+    }
+
+    .edu-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--color-dark);
+    }
+
+    .edu-desc {
+      font-size: 0.85rem;
+      color: var(--color-slate);
+    }
+
+    /* Print Styling overrides */
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+      }
+      .resume-container {
+        box-shadow: none;
+        padding: 0;
+      }
+      .control-bar {
+        display: none;
+      }
+      /* Prevent page break inside cards and experience items */
+      .skill-category, .exp-item, .project-item, .metric-card {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="control-bar">
+    <span>📄 Ubamadu Possible Sopuruchi — Professional CV / Resume</span>
+    <button onclick="window.print()" class="btn">Print / Save as PDF</button>
+  </div>
+
+  <div class="resume-container">
+    <header>
+      <h1>UBAMADU POSSIBLE SOPURUCHI</h1>
+      <div class="title-tag">Senior PCB Design & Embedded Systems Engineer</div>
+      <div class="contact-grid">
+        <div class="contact-item">
+          📧 <a href="mailto:ubamadupossible@gmail.com">ubamadupossible@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          📞 <a href="tel:+2348062167569">+234 (0) 806 216 7569</a>
+        </div>
+        <div class="contact-item">
+          🔗 <a href="https://www.linkedin.com/in/ubamadupossible" target="_blank">linkedin.com/in/ubamadupossible</a>
+        </div>
+        <div class="contact-item">
+          💻 <a href="https://ubamadupossible.github.io" target="_blank">ubamadupossible.github.io</a>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h2>Executive Summary</h2>
+      <p>
+        Senior embedded hardware engineer with 3+ years delivering production-grade PCB designs and firmware solutions across power electronics, IoT, control systems and data acquisition. Proven track record: 20+ multilayer PCBs designed and manufactured, 10+ products in active deployment, and a 35% average cost reduction through design optimization. Highly specialized in ESP32/STM32 and AVR firmware, custom board layouts, high-voltage inverter topologies, signal integrity, and robust manufacturing handoff.
+      </p>
+    </section>
+
+    <section>
+      <h2>Technical Core Competencies</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <div class="skill-category-title">PCB Design & Power Electronics</div>
+          <div class="skill-list">
+            2–8 layer multilayer layout | High-density routing | Signal integrity & EMI mitigation | Thermal management (DFM) | Buck/boost converters (95%+ efficiency) | Full-bridge inverters (1–5kW) | High-current traces (50–100A)
+          </div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-category-title">Microcontroller Firmware & Integration</div>
+          <div class="skill-list">
+            ESP32/ESP32-S3 (WiFi/BLE) | STM32 (bare-metal & RTOS) | AVR (ATmega) | UART, SPI, I2C | Ethernet (W5500) | FAT32 microSD logging | IoT (LoRaWAN, 4G modem integration) | Sensor fusion & HMI programming
+          </div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-category-title">Tools & Software</div>
+          <div class="skill-list">
+            Altium Designer (Expert) | Proteus | EasyEDA | Nextion HMI IDE | Embedded C/C++ | Arduino & PlatformIO | Git version control | Gerber generation & PCB validation
+          </div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-category-title">Hiring & Workflow Readiness</div>
+          <div class="skill-list">
+            Full-time remote since 2023 | 5+ concurrent international clients | Async communication (Slack, Email, GitHub) | Timezone flexible | Prepared for same-day technical design iterations
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Professional Experience</h2>
+      
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">Freelance PCB Design & Embedded Hardware Engineer</div>
+          <div class="exp-date">2023 – Present</div>
+        </div>
+        <div class="exp-company-loc" style="margin-bottom: 6px;">Remote (Global clients in USA, Nigeria)</div>
+        <ul class="bullets">
+          <li>Led end-to-end design of 10+ production PCBs (2–8 layer) for clients across IoT, power monitoring, and embedded systems; achieved a 98% first-pass design acceptance rate with zero manufacturing rework.</li>
+          <li>Designed high-current inverter PCBs (3kW single-phase, 5kW three-phase prototypes): optimized copper pours for 80°C peak operating temps, achieved 96% efficiency, and reduced EMI by 18dB through layout-driven component placement.</li>
+          <li>Architected real-time data logging systems (1–10kHz sampling, Ethernet + SD card): integrated W5500 Ethernet, FAT32 file system, and custom web dashboards; deployed across 12+ customer installations.</li>
+          <li>Generated production-ready manufacturing documentation (schematics, 8-layer Gerbers, BOMs, assembly notes); coordinated with 4 contract manufacturers (China, US, Nigeria); reduced BOM cost by 32% through component substitution.</li>
+          <li>Validated PCBs in field: conducted thermal imaging, EMI pre-compliance testing, and long-duration stress tests (500+ hour burn-in); achieved 99.2% uptime across deployed systems.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">Embedded Systems Engineer</div>
+          <div class="exp-date">July 2020 – Present</div>
+        </div>
+        <div class="exp-company-loc" style="margin-bottom: 6px;">Kodion Energy, Wichita Kansas, USA</div>
+        <ul class="bullets">
+          <li>Designed 18 custom microcontroller-based PCBs; provided electrical schematics, Gerber files, and technical support to manufacturing partners; reduced prototype-to-production cycle from 12 weeks to 6 weeks.</li>
+          <li>Built and tested electronic prototypes: validated sensor interfaces (ADC accuracy ±1.2%), control systems, and communication modules; identified design flaws pre-manufacturing, preventing production losses.</li>
+          <li>Developed firmware for 8 microcontroller projects (ESP32, STM32) handling real-time sensor processing, wireless telemetry (WIFI/BLE), and cloud integration; deployed with zero critical field failures.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-role">Technical Trainee – Radio & Fiber Optics</div>
+          <div class="exp-date">Jan 2020 – Jul 2020</div>
+        </div>
+        <div class="exp-company-loc" style="margin-bottom: 6px;">Neonet Wireless Nigeria Limited, Lagos</div>
+        <ul class="bullets">
+          <li>Executed microwave radio design and installation: configured 12+ point-to-point links, troubleshot RF path loss issues, performed site survey and antenna alignment; achieved 99.5% link availability.</li>
+          <li>Installed and tested fiber optic splicing: spliced 40+ single-mode fiber connections, maintaining <0.2dB insertion loss per joint; validated with OTDR testing.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Quantified Impact & Proof of Excellence</h2>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-value">20+</div>
+          <div class="metric-label">Multilayer PCBs Designed</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">10+</div>
+          <div class="metric-label">Products Active Deployed</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">35%</div>
+          <div class="metric-label">Avg. Cost Reduction</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">6 Wk</div>
+          <div class="metric-label">Proto-to-Prod Cycle</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Signature Projects & Outcomes</h2>
+      
+      <div class="project-item">
+        <div class="project-title">Project 1: Multi-Layer Data Acquisition, Processing & Logging System</div>
+        <ul class="bullets">
+          <li>Engineered 4-layer high-current data logger PCB (120×80mm) capturing 10 analog channels at 10kHz, 500mA output drive; integrated Ethernet (W5500), microSD logger, RTC, and 12-bit ADC frontend.</li>
+          <li><strong>Manufacturing & deployment:</strong> 20+ units produced across 3 production runs; validated thermal stability (60°C steady-state @ 2A load), EMI pre-compliance (FCC Class B), and projected MTBF >5 years.</li>
+          <li><strong>Business impact:</strong> 22% reduction in per-unit BOM cost; 40% improvement in monitoring accuracy vs. competitor products.</li>
+        </ul>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Project 2: 3kW Single-Phase Inverter Power Stage PCB</div>
+        <ul class="bullets">
+          <li>Designed 6-layer high-power inverter PCB: full-bridge topology, 100A traces with buried vias for thermal distribution, isolated gate drivers (TLP250), and robust EMI filtering; validated 96% efficiency at full load.</li>
+          <li><strong>Thermal management:</strong> junction temperatures remained under 75°C under continuous full-load 3kW operation; layout optimizations reduced MOSFET dissipation by 12%.</li>
+          <li><strong>Field validation:</strong> Passed rigorous 50+ hour burn-in testing; zero field failures in solar + backup power applications.</li>
+        </ul>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">Project 3: High-Speed USB Acquisition Dongle</div>
+        <ul class="bullets">
+          <li>Developed 4-layer USB 2.0 high-speed data acquisition board (STM32): 8-channel simultaneous ADC sampling at 1 Msps, real-time USB streaming, buffering via SRAM + flash.</li>
+          <li><strong>Validation:</strong> oscilloscope verified timing margins (USB eye diagram passed compliance specs), demonstrated jitter <10ns RMS, and 96% USB 2.0 bandwidth utilization.</li>
+          <li><strong>Deployment:</strong> 25+ units manufactured; successfully adopted by 3 research labs for vibration & acoustic testing.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section style="margin-bottom: 0;">
+      <h2>Education</h2>
+      <div class="edu-item">
+        <div class="edu-title">Higher National Diploma (HND) in Electrical & Electronics Engineering</div>
+        <div class="edu-desc">Federal Polytechnic Nekede, Owerri, Nigeria</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-title">National Diploma (ND) in Electrical & Electronics Engineering</div>
+        <div class="edu-desc">Federal Polytechnic Nekede, Owerri, Nigeria</div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Automatically trigger print on load if parameter is passed, making it easy to download directly
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has('download') || urlParams.has('print')) {
+        setTimeout(() => {
+          window.print();
+        }, 500);
+      }
+    });
+  </script>
+</body>
+</html>
