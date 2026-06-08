@@ -4,11 +4,11 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "Hardware & Protocols",
-      skills: ["ESP32", "Arduino", "PCB Design", "UART", "SPI", "I2C", "Ethernet/W5500", "Sensor Integration"]
+      skills: ["ESP32", "STM32", "FPGA", "AVR Microcontroller", "Arduino", "PCB Design", "UART", "SPI", "I2C", "Ethernet/W5500", "Sensor Integration"]
     },
     {
       title: "Firmware & Software",
-      skills: ["Embedded C/C++", "Nextion HMI", "SD Card Logging", "FreeRTOS"]
+      skills: ["Embedded C/C++", "PlatformIO", "Altium", "Proteus", "KiCad", "EasyEDA", "Nextion HMI", "SD Card Logging", "FreeRTOS"]
     },
     {
       title: "Systems & Web",

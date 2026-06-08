@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Cpu } from 'lucide-react';
 
-const Navbar = () => {
+const Navbar = ({ onLinkClick }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -32,7 +32,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-        <a href="#" className="flex items-center gap-2 group">
+        <a href="#" onClick={onLinkClick} className="flex items-center gap-2 group">
           <Cpu className="text-primary w-8 h-8 group-hover:text-primary-light transition-colors" />
           <span className="text-xl font-bold tracking-wider text-white">
             Ubamadu<span className="text-primary"> Possible</span>
@@ -45,6 +45,7 @@ const Navbar = () => {
             <a 
               key={link.name} 
               href={link.href}
+              onClick={onLinkClick}
               className="text-sm font-medium text-slate-300 hover:text-primary transition-colors uppercase tracking-widest"
             >
               {link.name}
@@ -81,7 +82,7 @@ const Navbar = () => {
               <a 
                 key={link.name} 
                 href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => { setIsMobileMenuOpen(false); onLinkClick(); }}
                 className="text-sm font-medium text-slate-300 hover:text-primary transition-colors uppercase tracking-widest"
               >
                 {link.name}

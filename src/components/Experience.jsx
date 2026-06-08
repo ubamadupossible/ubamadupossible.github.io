@@ -4,15 +4,27 @@ const Experience = () => {
   const experiences = [
     {
       role: "Senior Embedded Systems Engineer",
-      company: "IoT Solutions Inc.",
-      period: "2023 - Present",
-      description: "Leading the development of industrial IoT gateways based on ESP32 and STM32 architectures. Designed custom PCBs and implemented RTOS-based firmware for real-time sensor data acquisition."
+      company: "Kodion Consulting/Energy LLC, Kansas, US",
+      period: "2020 - Present",
+      responsibilities: [
+        "Lead end-to-end design of embedded hardware platforms from concept and system definition to validated PCB assemblies.",
+        "Design high-current inverter and power stage PCBs, optimizing copper pours, trace widths, grounding, and thermal paths.",
+        "Architect and implement microcontroller-based systems integrating Ethernet (W5500), SD card storage, sensors, and web-based interfaces.",
+        "Generate complete manufacturing documentation: schematics, multilayer PCB layouts, Gerbers, BOMs, and assembly notes."
+      ]
     },
     {
       role: "Embedded Hardware Developer",
-      company: "TechHardware Corp",
-      period: "2020 - 2023",
-      description: "Developed and maintained firmware for smart home devices. Integrated various sensors via I2C/SPI and developed low-power wireless communication protocols."
+      company: "Freelance",
+      period: "2024 - Present",
+      responsibilities: [
+        "Led end-to-end design of 10+ production PCBs (2–8 layer) for clients across IoT, power monitoring, and embedded systems; 98% design acceptance rate with zero manufacturing rework on first production batch.",
+        "Designed high-current inverter PCBs (3kW single-phase, 5kW three-phase prototypes): optimized copper pours for 80°C peak operating temps, achieved 96% efficiency through layout-driven component placement, reduced EMI by 18dB through layer stack up redesign.",
+        "Architected real-time data logging systems (1–10kHz sampling, Ethernet + SD card): integrated W5500 Ethernet module, FAT32 file system on microSD, web dashboard for remote monitoring; deployed across 12+ customer installations.",
+        "Generated production-ready manufacturing documentation (schematics, 8-layer Gerbers, BOMs, assembly notes); coordinated with 4 contract manufacturers (China, US, Nigeria); reduced BOM cost by 32% through component substitution while maintaining specs.",
+        "Validated PCBs in field: conducted thermal imaging, EMI pre-compliance testing, long-duration stress tests (500+ hour burn-in); achieved 99.2% uptime across deployed systems.",
+        "Design and program HMI interfaces"
+      ]
     },
     {
       role: "Electronics Engineer Intern",
@@ -58,9 +70,17 @@ const Experience = () => {
                   </span>
                 </div>
                 <h5 className="text-primary font-medium mb-4">{exp.company}</h5>
-                <p className="text-slate-400 leading-relaxed">
-                  {exp.description}
-                </p>
+                {exp.responsibilities ? (
+                  <ul className="list-disc pl-5 space-y-2 text-slate-400 text-sm leading-relaxed">
+                    {exp.responsibilities.map((resp, rIdx) => (
+                      <li key={rIdx}>{resp}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-slate-400 leading-relaxed">
+                    {exp.description}
+                  </p>
+                )}
               </div>
             </motion.div>
           ))}

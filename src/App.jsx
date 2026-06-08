@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -7,8 +8,15 @@ import Projects from './components/Projects'
 import Experience from './components/Experience'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import ProjectDetail from './components/ProjectDetail'
 
 function App() {
+  const [selectedProjectIndex, setSelectedProjectIndex] = useState(null);
+
+  const handleLinkClick = () => {
+    setSelectedProjectIndex(null);
+  };
+
   return (
     <div className="relative min-h-screen bg-bg-dark text-slate-300 selection:bg-primary/30 selection:text-white">
       {/* Animated Background */}
@@ -36,14 +44,39 @@ function App() {
 
       {/* Main Content */}
       <div className="relative z-10 flex flex-col min-h-screen">
-        <Navbar />
-        <main className="flex-grow">
-          <Hero />
-          <About />
-          <Skills />
-          <Projects />
-          <Experience />
-          <Contact />
+        <Navbar onLinkClick={handleLinkClick} />
+        <main className="flex-grow pt-20">
+          <AnimatePresence mode="wait">
+            {selectedProjectIndex === null ? (
+              <motion.div
+                key="home"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Hero />
+                <About />
+                <Skills />
+                <Projects onProjectClick={(idx) => setSelectedProjectIndex(idx)} />
+                <Experience />
+                <Contact />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="detail"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ProjectDetail 
+                  projectIndex={selectedProjectIndex} 
+                  onBack={() => setSelectedProjectIndex(null)} 
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </main>
         <Footer />
       </div>
