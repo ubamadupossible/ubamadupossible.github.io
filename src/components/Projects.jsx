@@ -16,8 +16,8 @@ const Projects = ({ onProjectClick }) => {
     },
     {
       title: "Nextion HMI Industrial Controller",
-      description: "Advanced touchscreen interface for industrial automation featuring temperature monitoring, dynamic setpoint configuration, and automated relay control systems.",
-      image: "./images/project2.png",
+      description: "Advanced touchscreen interface for industrial automation featuring temperature monitoring of oven chamber and transformer core, dynamic setpoint configuration, Humidity monitoring and automated relay control systems.",
+      image: "./images/project2.jpg",
       tags: ["Nextion HMI", "Relay Automation", "Embedded C++", "UI/UX"],
       icon: <Activity className="w-5 h-5" />
     },

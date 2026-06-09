@@ -64,21 +64,21 @@ const ProjectDetail = ({ projectIndex, onBack }) => {
     {
       title: "Nextion HMI Industrial Controller",
       subtitle: "HUMAN-MACHINE INTERFACE & TEMPERATURE CONTROLLER",
-      description: "Advanced touchscreen interface for industrial automation featuring temperature monitoring, dynamic setpoint configuration, and automated relay control systems.",
-      image: "./images/project2.png",
-      tags: ["Nextion HMI", "Relay Automation", "Embedded C++", "UI/UX", "RS485 Modbus"],
+      description: "Advanced touchscreen interface for industrial automation featuring temperature monitoring of oven chamber and transformer core, dynamic setpoint configuration, Humidity monitoring and automated relay control systems.",
+      image: "./images/project2.jpg",
+      tags: ["Nextion HMI", "Relay Automation", "Embedded C++", "UI/UX", "UART/TTL"],
       icon: <Activity className="w-5 h-5 text-primary" />,
       specs: [
         { label: "Display Size", value: "7.0\" Intelligent Series Resistive Touchscreen" },
-        { label: "Communication Protocol", value: "RS-485 Modbus RTU / UART TTL" },
+        { label: "Communication Protocol", value: " UART TTL" },
         { label: "Processor Core", value: "STM32 MCU on Nextion Module" },
         { label: "Relay Outputs", value: "4-Channel Isolated 10A Relays" },
         { label: "Programming", value: "Nextion Editor UI Design + Embedded C++ on Host MCU" }
       ],
       industrialUsage: [
-        "Operator panel for HVAC control systems and commercial refrigeration unit tuning.",
+        "Operator panel for HVAC control systems and commercial refrigeration/oven unit tuning.",
         "Manual override console and telemetry readout for multi-zone industrial furnaces.",
-        "Real-time status display and setpoint config for automated conveyor machinery."
+        "Real-time status display and setpoint configuration for industrial oven."
       ]
     },
     {
