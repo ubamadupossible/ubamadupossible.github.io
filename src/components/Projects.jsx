@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Database, Activity, Zap, Radio } from 'lucide-react';
+import { ExternalLink, Database, Activity, Zap, Radio, Cpu } from 'lucide-react';
 
 const GithubIcon = ({ className }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
@@ -34,6 +34,13 @@ const Projects = ({ onProjectClick }) => {
       image: "./images/project4.png",
       tags: ["Telemetry", "Wireless", "Sensor Streaming", "Visualization"],
       icon: <Radio className="w-5 h-5" />
+    },
+    {
+      title: "Inverter TLP250 based driver board with programable chip",
+      description: "This is used to generate the signal that drive the inverter Power stage.",
+      image: "./images/project5.jpg",
+      tags: ["Altium", "Power Electronics", "TLP250", "Programmable IC"],
+      icon: <Cpu className="w-5 h-5" />
     }
   ];
 
@@ -89,22 +96,9 @@ const Projects = ({ onProjectClick }) => {
                 </div>
                 
                 <div className="flex items-center gap-4 border-t border-white/5 pt-6 mt-auto">
-                  {idx !== 0 && (
-                    <a 
-                      href="#" 
-                      onClick={(e) => { e.stopPropagation(); }}
-                      className="flex items-center gap-2 text-sm font-bold text-slate-300 hover:text-white transition-colors"
-                    >
-                      <GithubIcon className="w-4 h-4" /> Source Code
-                    </a>
-                  )}
                   <button 
                     onClick={(e) => { e.stopPropagation(); onProjectClick(idx); }}
-                    className={`flex items-center gap-2 font-bold text-primary hover:text-primary-light transition-all cursor-pointer ${
-                      idx === 0 
-                        ? 'text-lg px-6 py-2.5 rounded border border-primary/50 hover:bg-primary/10 w-full justify-center shadow-[0_0_15px_rgba(14,165,233,0.15)] hover:shadow-[0_0_25px_rgba(14,165,233,0.35)]' 
-                        : 'text-sm ml-auto'
-                    }`}
+                    className="flex items-center gap-2 font-bold text-primary hover:text-primary-light transition-all cursor-pointer text-lg px-6 py-2.5 rounded border border-primary/50 hover:bg-primary/10 w-full justify-center shadow-[0_0_15px_rgba(14,165,233,0.15)] hover:shadow-[0_0_25px_rgba(14,165,233,0.35)]"
                   >
                     View Specs &rarr;
                   </button>

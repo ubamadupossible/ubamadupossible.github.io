@@ -11,19 +11,37 @@ const ProjectDetail = ({ projectIndex, onBack }) => {
     window.scrollTo({ top: 0, behavior: 'instant' });
 
     // Mock terminal log sequence for a cool industrial-tech vibe
-    const logs = [
-      "SYSTEM: Initializing diagnostic sequence...",
-      "BOOT: CPU core ESP32-S active [240MHz, Dual-Core]",
-      "NET: W5500 Ethernet controller detected",
-      "NET: DHCP request sent... IP allocated: 192.168.1.144",
-      "STORAGE: Micro-SD card mounted [FAT32, 32GB free]",
-      "SENSORS: Thermocouple cold-junction compensation active",
-      "SENSORS: High-voltage telemetry line calibrated",
-      "SENSORS: Current telemetry coil verified [3000A scale]",
-      "EMC: Shielding integrity check: PASS [100%]",
-      "SYSTEM: All systems operational. Monitoring grid..."
-    ];
+    let logs = [];
+    if (projectIndex === 1) {
+      logs = [
+        "SYSTEM: Initializing UART/TTL telemetry...",
+        "POLL: Requesting sensor registers...",
+        "DATA: Chamber Temperature [READ OK]",
+        "DATA: Core Temperature [READ OK]",
+        "DATA: Humidity (Moisture) [READ OK]",
+        "RELAY: Power Switch Status verified",
+        "RELAY: Heater Status verified",
+        "RELAY: Fan Status verified",
+        "RELAY: AirFlow Status verified",
+        "SYSTEM: High Limit Switch Status verified",
+        "SYSTEM: HMI UI updated successfully."
+      ];
+    } else {
+      logs = [
+        "SYSTEM: Initializing diagnostic sequence...",
+        "BOOT: CPU core ESP32-S active [240MHz, Dual-Core]",
+        "NET: W5500 Ethernet controller detected",
+        "NET: DHCP request sent... IP allocated: 192.168.1.144",
+        "STORAGE: Micro-SD card mounted [FAT32, 32GB free]",
+        "SENSORS: Thermocouple cold-junction compensation active",
+        "SENSORS: High-voltage telemetry line calibrated",
+        "SENSORS: Current telemetry coil verified [3000A scale]",
+        "EMC: Shielding integrity check: PASS [100%]",
+        "SYSTEM: All systems operational. Monitoring grid..."
+      ];
+    }
 
+    setTerminalLogs([]);
     let currentLogIndex = 0;
     const interval = setInterval(() => {
       if (currentLogIndex < logs.length) {
@@ -35,7 +53,7 @@ const ProjectDetail = ({ projectIndex, onBack }) => {
     }, 400);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [projectIndex]);
 
   const projectsDetailData = [
     {
@@ -58,7 +76,14 @@ const ProjectDetail = ({ projectIndex, onBack }) => {
         "Real-time grid load balancing and high-current monitoring in multi-megawatt solar inverter stations.",
         "Precision thermal monitoring for heavy boiler and steam generator instrumentation.",
         "Edge telemetry logging for industrial automation networks requiring reliable local and cloud-based data storage.",
-        "Rugged signal processing in high-electromagnetic-noise industrial environments."
+        "Rugged signal processing in high-electromagnetic-noise industrial environments.",
+        "Inverter control and automation",
+        "IOT control device"
+      ],
+      gallery: [
+        { type: 'image', src: './images/pcb_layout_1.png', label: 'PCB Layout' },
+        { type: 'image', src: './images/pcb_mockup_1.png', label: '3-D mockup' },
+        { type: 'video', src: './images/cpu_video.mp4', label: 'PCB and HMI test' }
       ]
     },
     {
@@ -119,6 +144,29 @@ const ProjectDetail = ({ projectIndex, onBack }) => {
         "Off-grid environmental sensor meshes for agricultural moisture and temperature logging.",
         "Remote tank levels and fluid flow logging in cross-country pipeline networks.",
         "Structural health wireless monitoring tags for bridge and tunnel stress measurement."
+      ]
+    },
+    {
+      title: "Inverter TLP250 based driver board with programable chip",
+      subtitle: "INVERTER POWER STAGE DRIVER",
+      description: "This is used to generate the signal that drive the inverter Power stage.",
+      image: "./images/project5.jpg",
+      tags: ["Altium", "Power Electronics", "TLP250", "Programmable IC"],
+      icon: <Cpu className="w-5 h-5 text-primary" />,
+      specs: [
+        { label: "Programmable IC", value: "Onboard logic and control chip" },
+        { label: "Current Handling", value: "Includes buffer to handle high driving current" },
+        { label: "Sensors", value: "Allows for extensive sensor integration" },
+        { label: "Control Loop", value: "Has an onboard feedback system" }
+      ],
+      industrialUsage: [
+        "High-power inverter applications requiring isolated gate drivers.",
+        "Custom power stages with precise control signal requirements."
+      ],
+      gallery: [
+        { type: 'image', src: './images/pcb_layout_5.png', label: 'PCB Layout' },
+        { type: 'image', src: './images/pcb_mockup_5.png', label: '3-D PCB layout' },
+        { type: 'image', src: './images/pcb_produced_5.jpg', label: 'Driver board After production' }
       ]
     }
   ];
@@ -255,6 +303,34 @@ const ProjectDetail = ({ projectIndex, onBack }) => {
         </div>
       </div>
 
+      {/* Hardware Media Gallery */}
+      {project.gallery && project.gallery.length > 0 && (
+        <div className="glass-panel rounded-xl p-8 border border-white/10 shadow-lg mb-12 bg-surface/40">
+          <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+            <Maximize2 className="w-5 h-5 text-accent" /> Hardware Media Gallery
+          </h2>
+          <div className="flex gap-6 overflow-x-auto pb-4 snap-x scrollbar-thin scrollbar-thumb-primary/50 scrollbar-track-transparent">
+            {project.gallery.map((media, i) => (
+              <div key={i} className="flex-none w-80 md:w-[450px] snap-center group relative rounded-lg overflow-hidden border border-white/10">
+                {media.type === 'image' ? (
+                  <img 
+                    src={media.src} 
+                    alt={media.label} 
+                    onClick={() => setIsFullscreen({ src: media.src, title: media.label })}
+                    className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105 cursor-zoom-in" 
+                  />
+                ) : (
+                  <video src={media.src} controls className="w-full h-72 object-cover" />
+                )}
+                <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-3 backdrop-blur-sm pointer-events-none">
+                  <p className="text-sm font-mono text-white text-center">{media.label}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Lightbox / Fullscreen Image Modal */}
       <AnimatePresence>
         {isFullscreen && (
@@ -272,12 +348,12 @@ const ProjectDetail = ({ projectIndex, onBack }) => {
               className="relative max-w-full max-h-full"
             >
               <img 
-                src={project.image} 
-                alt={project.title} 
+                src={typeof isFullscreen === 'object' ? isFullscreen.src : project.image} 
+                alt={typeof isFullscreen === 'object' ? isFullscreen.title : project.title} 
                 className="max-w-full max-h-[92vh] object-contain rounded border border-white/10"
               />
               <p className="text-center text-xs font-mono text-slate-400 mt-2">
-                {project.title} — FULL_RESOLUTION_VIEW (Click anywhere to close)
+                {typeof isFullscreen === 'object' ? isFullscreen.title : project.title} — FULL_RESOLUTION_VIEW (Click anywhere to close)
               </p>
             </motion.div>
           </motion.div>
