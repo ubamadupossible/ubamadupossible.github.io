@@ -59,27 +59,176 @@ const ProjectDetail = ({ projectIndex, onBack }) => {
     {
       title: "HIGH PERFORMANCE CENTRAL PROCESSING CORE",
       subtitle: "INDUSTRIAL GRID MONITORING & TELEMETRY CONTROLLER",
-      description: "A high-performance processing unit designed using ALTIUM and engineered for high-availability grid monitoring. Features redundant data logging, full industrial sensor integration (thermocouple, pressure, humidity, high-current telemetry of upto 3000Amps sensing, high-voltage telemetry etc), and hardware-level EMI/EMC mitigation.",
+      description: "Designed and developed a custom ESP32-based industrial monitoring and control platform for power electronics, transformer systems, and industrial automation. It serves as a flexible hardware solution capable of acquiring, processing, logging, and transmitting real-time operational data.\n\nOutcome: Delivered a scalable industrial control platform capable of monitoring critical electrical and environmental parameters while providing reliable local and remote access to operational data. The modular architecture allows deployment across diverse projects.",
       image: "./images/project1.jpg",
-      tags: ["Altium Designer", "High-Speed Layout", "PLC Engineering", "Signal Integrity (SI)", "W5500 Ethernet", "EMI/EMC Compliance", "Secure OTA"],
+      tags: ["ESP32", "Embedded C/C++", "PCB Design", "Ethernet/Wi-Fi", "Web Server", "Data Logging", "RTC", "Sensor Interfacing", "System Architecture"],
       icon: <Database className="w-5 h-5 text-primary" />,
       specs: [
-        { label: "Processor", value: "ESP32-S 32-bit Dual-Core 240MHz" },
-        { label: "Ethernet Controller", value: "Wiznet W5500 (SPI, Hardwired TCP/IP)" },
-        { label: "Current Telemetry", value: "Up to 3000Amps Non-Intrusive Split-Core CT" },
-        { label: "Voltage Telemetry", value: "Isolated 0-500V AC/DC Precision Front-End" },
-        { label: "RTC Backup Battery", value: "CR1220 Coin Cell Lithium Battery" },
-        { label: "Storage", value: "Micro-SD Slot supporting FAT32 logging" },
-        { label: "Thermal & Environmental", value: "K-Type Thermocouple, I2C Humidity & Barometric Sensors" }
+        { label: "Environmental", value: "3x Thermocouples, Pressure Sensor, Analog/Digital I/O" },
+        { label: "Electrical", value: "High Voltage Sensing, Current Measurement, Fault Detection" },
+        { label: "Connectivity", value: "Wi-Fi, Ethernet, Embedded Web Server, Local & Remote" },
+        { label: "Data Management", value: "SD Card Data Logging, RTC Time Stamping, Event Logging" },
+        { label: "HMI", value: "Touchscreen Support, Real-Time Visualization, Alarms" },
+        { label: "Hardware Core", value: "ESP32 Dual-Core, Signal Conditioning, Isolation Circuits" }
       ],
       industrialUsage: [
-        "Real-time grid load balancing and high-current monitoring in multi-megawatt solar inverter stations.",
-        "Precision thermal monitoring for heavy boiler and steam generator instrumentation.",
-        "Edge telemetry logging for industrial automation networks requiring reliable local and cloud-based data storage.",
-        "Rugged signal processing in high-electromagnetic-noise industrial environments.",
-        "Inverter control and automation",
-        "IOT control device"
+        "Transformer Monitoring: Tracking temperature, oil pressure, electrical parameters, and fault conditions.",
+        "Inverter Systems: Real-time monitoring, embedded web dashboard, performance analytics, and fault reporting.",
+        "Industrial Automation: Process and equipment health monitoring, environmental tracking, and remote telemetry nodes.",
+        "Comprehensive Engineering: End-to-end delivery from system architecture and PCB layout to firmware and web server development."
       ],
+      extendedContent: (
+        <div className="space-y-10 text-slate-300 text-sm leading-relaxed mt-4">
+          <div>
+            <h3 className="text-lg font-bold text-white mb-2">Overview</h3>
+            <p className="mb-2">Designed and developed a custom ESP32-based industrial monitoring and control platform for power electronics, transformer systems, inverter systems, and other industrial automation applications.</p>
+            <p className="mb-2">The platform was engineered as a flexible hardware solution capable of acquiring, processing, logging, and transmitting real-time operational data from multiple sensor sources while providing local and remote monitoring capabilities.</p>
+            <p className="mb-2">Depending on the application, the system can operate as:</p>
+            <ul className="list-disc list-inside space-y-1 ml-2 text-slate-400">
+              <li>Transformer Monitoring and Protection Controller</li>
+              <li>Inverter Monitoring and Control System</li>
+              <li>Industrial Data Acquisition Unit (DAQ)</li>
+              <li>Remote Telemetry System</li>
+              <li>Process Monitoring Controller</li>
+              <li>Energy Management Node</li>
+            </ul>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Key Features</h3>
+              
+              <h4 className="font-bold text-primary mb-1 mt-3">Environmental Monitoring</h4>
+              <ul className="list-disc list-inside space-y-1 ml-2 text-slate-400">
+                <li>Three Thermocouple Interfaces for temperature measurement</li>
+                <li>Pressure Sensor Interface</li>
+                <li>Multiple Analog and Digital Sensor Inputs</li>
+                <li>Real-time parameter acquisition</li>
+              </ul>
+              
+              <h4 className="font-bold text-primary mb-1 mt-3">Electrical Monitoring</h4>
+              <ul className="list-disc list-inside space-y-1 ml-2 text-slate-400">
+                <li>High Voltage Sensing Interface</li>
+                <li>Current Measurement Interface</li>
+                <li>Power System Monitoring</li>
+                <li>Fault Detection Capability</li>
+                <li>Protection Logic Implementation</li>
+              </ul>
+              
+              <h4 className="font-bold text-primary mb-1 mt-3">Connectivity</h4>
+              <ul className="list-disc list-inside space-y-1 ml-2 text-slate-400">
+                <li>Wi-Fi & Ethernet Communication</li>
+                <li>Embedded Web Server</li>
+                <li>Local and Remote Monitoring</li>
+                <li>Network-Based Data Access</li>
+              </ul>
+              
+              <h4 className="font-bold text-primary mb-1 mt-3">Data Management</h4>
+              <ul className="list-disc list-inside space-y-1 ml-2 text-slate-400">
+                <li>SD Card Data Logging</li>
+                <li>Real-Time Clock (RTC) Time Stamping</li>
+                <li>Historical Data Storage</li>
+                <li>Event Logging & Operational Record Keeping</li>
+              </ul>
+
+              <h4 className="font-bold text-primary mb-1 mt-3">Human-Machine Interface</h4>
+              <ul className="list-disc list-inside space-y-1 ml-2 text-slate-400">
+                <li>Touchscreen Display Support</li>
+                <li>Real-Time System Status Visualization</li>
+                <li>Alarm Notifications</li>
+                <li>Parameter Configuration</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Hardware Architecture</h3>
+              <p className="mb-2">The system integrates:</p>
+              <ul className="list-disc list-inside space-y-1 ml-2 text-slate-400 mb-6">
+                <li>ESP32 Dual-Core Microcontroller</li>
+                <li>Ethernet Interface & Wi-Fi Connectivity</li>
+                <li>RTC Module & SD Card Storage</li>
+                <li>Sensor Signal Conditioning Circuits</li>
+                <li>Industrial Input/Output Interfaces</li>
+                <li>Protection and Isolation Circuits</li>
+              </ul>
+
+              <h3 className="text-lg font-bold text-white mb-4">Applications</h3>
+              
+              <h4 className="font-bold text-primary mb-1">Transformer Monitoring</h4>
+              <p className="mb-1 text-xs text-slate-400">When deployed in transformer installations, the system monitors:</p>
+              <ul className="list-disc list-inside space-y-1 ml-2 text-slate-400 mb-3 text-xs">
+                <li>Transformer Temperature & Oil Pressure</li>
+                <li>Voltage & Current Parameters</li>
+                <li>Operational Events & Fault Conditions</li>
+              </ul>
+
+              <h4 className="font-bold text-primary mb-1">Inverter Systems</h4>
+              <p className="mb-1 text-xs text-slate-400">When deployed in inverter applications, the controller provides:</p>
+              <ul className="list-disc list-inside space-y-1 ml-2 text-slate-400 mb-3 text-xs">
+                <li>Real-Time System Monitoring & Embedded Web Dashboard</li>
+                <li>Data Logging & Fault Reporting</li>
+                <li>Remote Monitoring & Performance Analytics</li>
+              </ul>
+
+              <h4 className="font-bold text-primary mb-1">Industrial Automation</h4>
+              <p className="mb-1 text-xs text-slate-400">The platform can be adapted for:</p>
+              <ul className="list-disc list-inside space-y-1 ml-2 text-slate-400 text-xs">
+                <li>Process & Equipment Health Monitoring</li>
+                <li>Environmental Monitoring</li>
+                <li>Industrial Data Acquisition</li>
+                <li>Remote Telemetry Systems</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-lg font-bold text-white mb-3">Engineering Contributions</h3>
+              <ul className="list-disc list-inside space-y-1.5 ml-2 text-slate-400">
+                <li>System Architecture Design</li>
+                <li>Hardware & PCB Design and Layout</li>
+                <li>Sensor Interface Development</li>
+                <li>Firmware & Web Server Development</li>
+                <li>Data Logging System Design</li>
+                <li>Industrial Communication Integration</li>
+                <li>System Testing and Validation</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-white mb-3">Technologies Used</h3>
+              
+              <h4 className="font-bold text-primary mb-1 mt-2">Hardware</h4>
+              <ul className="list-disc list-inside space-y-1 ml-2 text-slate-400 mb-3 text-sm">
+                <li>ESP32, Ethernet Interface, RTC Module, SD Storage</li>
+                <li>Thermocouple, Pressure, Voltage, and Current Measurement Circuits</li>
+              </ul>
+
+              <h4 className="font-bold text-primary mb-1">Software</h4>
+              <ul className="list-disc list-inside space-y-1 ml-2 text-slate-400 text-sm">
+                <li>Embedded C/C++, ESP32 Framework</li>
+                <li>Web Server Technologies, Ethernet/Wi-Fi Networking</li>
+                <li>Data Logging Systems, Real-Time Monitoring Software</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-bold text-white mb-2">Outcome</h3>
+            <p className="mb-2">Delivered a scalable industrial control platform capable of monitoring critical electrical and environmental parameters while providing reliable local and remote access to operational data. The modular architecture allows deployment across transformer systems, inverter systems, energy management applications, and industrial automation projects.</p>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-bold text-white mb-3">My Role</h3>
+            <strong className="block text-primary mb-2">Embedded Systems Engineer & Hardware Designer</strong>
+            <p className="mb-2">Responsible for:</p>
+            <ul className="list-disc list-inside space-y-1.5 ml-2 text-slate-400">
+              <li>System Architecture & Schematic/PCB Design</li>
+              <li>Firmware & Web Dashboard Development</li>
+              <li>Testing, Validation & Deployment Support</li>
+            </ul>
+          </div>
+        </div>
+      ),
       gallery: [
         { type: 'image', src: './images/pcb_layout_1.png', label: 'PCB Layout' },
         { type: 'image', src: './images/pcb_mockup_1.png', label: '3-D mockup' },
@@ -283,6 +432,16 @@ const ProjectDetail = ({ projectIndex, onBack }) => {
           </div>
         </div>
       </div>
+
+      {/* Comprehensive Project Breakdown (if available) */}
+      {project.extendedContent && (
+        <div className="glass-panel rounded-xl p-8 border border-white/10 shadow-lg mb-12 bg-surface/40">
+          <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+            <FileText className="w-5 h-5 text-accent" /> In-Depth Project Case Study
+          </h2>
+          {project.extendedContent}
+        </div>
+      )}
 
       {/* Full-width Industrial Usage & Application Cases */}
       <div className="glass-panel rounded-xl p-8 border border-white/10 shadow-lg mb-12 bg-surface/40">

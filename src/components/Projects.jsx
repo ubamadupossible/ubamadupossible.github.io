@@ -9,9 +9,9 @@ const Projects = ({ onProjectClick }) => {
   const projects = [
     {
       title: "HIGH PERFORMANCE CENTRAL PROCESSING CORE",
-      description: "A high-performance processing unit designed using ALTIUM and engineered for high-availability grid monitoring. Features redundant data logging, full industrial sensor integration (thermocouple, pressure, humidity, high-current telemetry of upto 3000Amps sensing, high-voltage telemetry etc), and hardware-level EMI/EMC mitigation.",
+      description: "Custom ESP32-based industrial monitoring and control platform for power electronics, transformer systems, and automation. Features Wi-Fi/Ethernet telemetry, SD logging, and extensive sensor integration.",
       image: "./images/project1.jpg",
-      tags: ["Altium Designer", "High-Speed Layout", "PLC Engineering", "Signal Integrity (SI)", "W5500 Ethernet", "EMI/EMC Compliance", "Secure OTA"],
+      tags: ["ESP32", "Embedded C/C++", "PCB Design", "Ethernet/Wi-Fi", "Data Logging"],
       icon: <Database className="w-5 h-5" />
     },
     {
